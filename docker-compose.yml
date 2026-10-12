@@ -12,8 +12,8 @@ services:
     environment:
       - TZ=${TZ}
     volumes:
-      - /var/lib/docker/volumes/readarr-swarm/config:/config
-      - /var/lib/docker/volumes/readarr-swarm/db:/db
+      - readarr-swarm_config:/config
+      - readarr-swarm_db:/db
       - /media/Multimedia/Books:/books
       - /media/Multimedia/Incoming:/downloads
     ports:
