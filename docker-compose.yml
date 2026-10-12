@@ -12,8 +12,8 @@ services:
     environment:
       - TZ=${TZ}
     volumes:
-      - readarr.config:/config
-      - readarr.db:/db
+      - /var/lib/docker/volumes/readarr-swarm/config:/config
+      - /var/lib/docker/volumes/readarr-swarm/db:/db
       - /media/Multimedia/Books:/books
       - /media/Multimedia/Incoming:/downloads
     ports:
@@ -29,12 +29,6 @@ services:
           - node.labels.deployment.target.readarr == true
       restart_policy:
         condition: on-failure
-
-volumes:
-  readarr.config:
-    name: readarr-swarm.config
-  readarr.db:
-    name: readarr-swarm.db
 
 networks:
   readarr-swarm_default:
