@@ -1,6 +1,6 @@
 services:
   readarr:
-    image: linuxserver/readarr:0.4.19-nightly
+    image: linuxserver/readarr:0.4.18-nightly
     environment:
     - PUID=1000
     - PGID=1000
@@ -15,7 +15,7 @@ services:
     deploy:
       placement:
         constraints:
-        - node.labels.deployment.target.readarr == true
+        - node.role==manager
       restart_policy:
         condition: on-failure
 volumes:
